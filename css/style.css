@@ -1,23 +1,27 @@
+
+
 body {
     background: linear-gradient(25deg,#1D267D,#0C134F);
     background-attachment: fixed;
     scroll-behavior: smooth;
+    width: 100%;
+    height: 100%;
+    position: relative;
 
 }
 
+
+
 .head {
-    padding: 25px 0;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
+   
     padding: 20px 50px;
-    z-index: 1;
 }
 
 .head__nav {
     display: flex;
     justify-content: space-between;
+    
+    align-items: center;
 }
 
 .head__nav-logo {
@@ -139,4 +143,129 @@ a {
     margin-bottom: 20px;
 }
 
+/* Contact */
 
+.contact {
+    width: 100%;
+    height: 100vh;
+    justify-content: center;
+    color: white;
+    display: flex;
+    align-items: center;
+}
+
+.facebook__img ,
+.instagram__img ,
+.titok__img ,
+.githup__img  {
+    height: 80px;
+    width: 80px;
+} 
+
+.facecbook p,
+.instagram p,
+.titok p,
+.githup p {
+    opacity: 0;
+    font-size: 20px;
+    animation: goBottom 0.5s ease-in-out;
+}
+
+@keyframes goTop {
+    from {
+        transform: translateY(100px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes goBottom {
+    from {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    to {
+        transform: translateY(100px);
+        opacity: 0;
+    }
+}
+
+.facecbook:hover p,
+.instagram:hover p,
+.titok:hover p,
+.githup:hover p {
+    animation: goTop 0.5s ease-in-out;
+    display: block;
+    opacity: 1;
+}
+
+
+
+.facecbook:hover,
+.instagram:hover,
+.titok:hover,
+.githup:hover {
+    width: 200px;
+    height: 300px;
+    border-radius: 10px;
+    animation: zoomOut 0.5s linear forwards alternate;
+    transform-origin: top;
+}
+
+.facecbook,
+.instagram,
+.titok,
+.githup {
+    width: 200px;
+    height: 200px;
+    background-color: #5C469C;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #5C469C;
+    animation: zoomIn linear 0.5s;
+}
+
+@keyframes zoomOut {
+    from {
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+    }
+    to {
+        width: 200px;
+        height: 300px;
+        border-radius: 10px;
+    }
+}
+
+@keyframes zoomIn {
+    from {
+        width: 200px;
+        height: 300px;
+        border-radius: 10px;
+    }
+    to {
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+    }
+}
+
+
+@media (max-width: 575.98px) {
+    .head__nav-list {
+        display: none;
+    }
+
+    #home {
+        justify-content: center;
+        align-items: center;
+        display: flex;
+    }
+}
